@@ -5,7 +5,7 @@ metadata:
   name: webdav-pvc
   namespace: kube-system
   annotations:
-    volume.beta.kubernetes.io/storage-class: "slow"
+    volume.beta.kubernetes.io/storage-class: "microk8s-hostpath"
 spec:
   accessModes:
     - ReadWriteOnce

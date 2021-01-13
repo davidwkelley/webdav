@@ -5,8 +5,11 @@ metadata:
   name: webdav
   namespace: kube-system
 spec:
+  type: NodePort
   ports:
   - port: 80
+    targetPort: 80
+    nodePort: 31790
     protocol: TCP
   selector:
     app: webdav

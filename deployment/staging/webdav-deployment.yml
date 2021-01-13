@@ -1,10 +1,13 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webdav
   namespace: kube-system
 spec:
+  selector:
+    matchLabels:
+      app: webdav
   replicas: 1
   revisionHistoryLimit: 2
   template:
@@ -14,7 +17,7 @@ spec:
     spec:
       containers:
       - name: webdav
-        image: tapxxor/webdav:alpine-3.7
+        image: docker.io/library/webdav:v1
         ports:
         - containerPort: 80
         # lifecycle:
